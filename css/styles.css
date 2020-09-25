@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.output {
+    padding: 20px;
+    border: solid;
+    width: 50%;
+}
+
+.button {
+    margin-top: 20px;
+    font-size: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
