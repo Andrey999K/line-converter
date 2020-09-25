@@ -36,6 +36,7 @@ canvas.addEventListener("mousedown", () => {
 });
 
 reset.addEventListener("click", () => {
+    ctx.closePath();
     start = false;
     output.textContent = "";
     ctx.fillStyle = "orange";
