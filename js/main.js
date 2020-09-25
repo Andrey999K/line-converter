@@ -22,6 +22,7 @@ let start = false;
 
 canvas.addEventListener("mousedown", () => {
     if (!start) {
+        ctx.beginPath();
         ctx.moveTo(event.clientX, event.clientY);
         output.insertAdjacentText("beforeend", `ctx.moveTo(${event.clientX}, ${event.clientY});`);
         output.insertAdjacentHTML("beforeEnd", "<br>");
