@@ -22,6 +22,10 @@ const rectangle = document.createElement("button");
 rectangle.className = "button";
 rectangle.textContent = "Rectangle";
 
+const figureName = document.createElement("div");
+figureName.className = "figure";
+figureName.textContent = "Line";
+
 let circ = false;
 let rect = false;
 
@@ -34,6 +38,7 @@ document.body.appendChild(circle);
 document.body.appendChild(rectangle);
 document.body.appendChild(reset);
 document.body.appendChild(fill);
+document.body.appendChild(figureName);
 
 ctx.fillStyle = "orange";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -214,12 +219,15 @@ canvas.addEventListener("mousedown", mouseMove);
 
 reset.addEventListener("click", () => {
   ctx.closePath();
+  ctx.beginPath();
   start = false;
   circ = false;
   rect = false;
   output.textContent = "";
+  figureName.textContent = "Line";
   ctx.fillStyle = "orange";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.closePath();
 });
 
 fill.addEventListener("click", () => {
@@ -239,8 +247,10 @@ circle.addEventListener("click", () => {
   if (circ == false) {
     circ = true;
     rect = false;
+    figureName.textContent = "Circle";
   } else {
     circ = false;
+    figureName.textContent = "Line";
   }
 });
 
@@ -248,7 +258,9 @@ rectangle.addEventListener("click", () => {
   if (rect == false) {
     rect = true;
     circ = false;
+    figureName.textContent = "Rectangle";
   } else {
     rect = false;
+    figureName.textContent = "Line";
   }
 });

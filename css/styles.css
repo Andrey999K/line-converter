@@ -27,3 +27,10 @@ div {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.figure {
+    font-size: 100px;
+    font-weight: bold;
+    width: 100vw;
+    text-align: center;
+}
